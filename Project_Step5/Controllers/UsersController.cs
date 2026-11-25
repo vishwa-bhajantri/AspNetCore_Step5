@@ -23,5 +23,22 @@ namespace Project_Step5.Controllers
 
             return Ok(users);
         }
+
+        [HttpGet("GetUsersWithHttp")]
+        public IActionResult GetUsersWithHttp()
+        {
+            //HttpRequest request = HttpContext.Request;
+
+            //if(request.IsHttps == false)
+            //{
+            //    string url = "https://localhost:7025/api/Users/GetUsers";
+
+            //    return RedirectPreserveMethod(url);
+            //}
+
+            List<User> users = _userService.GetUsers();
+
+            return Ok(users);
+        }
     }
 }
